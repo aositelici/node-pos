@@ -7,7 +7,7 @@ function Item(barcode, name, unit, price) {
 }
 Item.getItems = function (barcode) {
   var value;
-  var fixtures = require('/home/me/Documents/nodejs/pos_v2/test/fixtures');
+  var fixtures = require('../../test/fixtures');
   var allItems = fixtures.loadAllItems();
   allItems.forEach(function (oneItem) {
     if (oneItem.barcode === barcode) {

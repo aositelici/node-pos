@@ -1,5 +1,5 @@
-var Item = require('/home/me/Documents/nodejs/pos_v2/main/model/item');
-var Promotion = require('/home/me/Documents/nodejs/pos_v2/main/model/promotion');
+var Item = require('../main/model/item');
+var Promotion = require('../main/model/promotion');
 exports.loadAllItems = function() {
   return [
     new Item('ITEM000000', '可口可乐', '瓶', 3.00),
