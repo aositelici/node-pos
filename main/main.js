@@ -1,5 +1,5 @@
 exports.printReceipt = function(tags) {
-  
+
 var Scanner = require('./model/scanner');
 var Cart = require('./model/cart');
 var Pos = require('./model/pos');
@@ -17,9 +17,8 @@ tags.forEach(function(tag) {
 
 var cartItems = cart.getCartItems();
 var promotions = fixtures.loadPromotions();
-var amount = cart.calculateAmount();
 
-var receipt = pos.printReceipt (cartItems,amount,promotions);
+var receipt = pos.printReceipt (cartItems,promotions);
 
 console.log(receipt);
 }

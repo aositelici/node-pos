@@ -1,4 +1,5 @@
 function Item(barcode, name, unit, price) {
+  
   this.barcode = barcode;
   this.name = name;
   this.unit = unit;
@@ -6,9 +7,11 @@ function Item(barcode, name, unit, price) {
 
 }
 Item.getItems = function (barcode) {
+
   var value;
   var fixtures = require('../../test/fixtures');
   var allItems = fixtures.loadAllItems();
+
   allItems.forEach(function (oneItem) {
     if (oneItem.barcode === barcode) {
       value = oneItem;
