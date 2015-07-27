@@ -1,8 +1,10 @@
+var fixtures = require('./fixtures');
+var main = require('../main/main');
 describe('pos', function() {
   var allItems, inputs, dateDigitToString;
 
   beforeEach(function() {
-    allItems = loadAllItems();
+    allItems = fixtures.loadAllItems();
     inputs = [
       'ITEM000001',
       'ITEM000001',
@@ -23,7 +25,7 @@ describe('pos', function() {
 
     spyOn(console, 'log');
 
-    printReceipt(inputs);
+    main.printReceipt(inputs);
 
     var currentDate = new Date(),
       year = dateDigitToString(currentDate.getFullYear()),
