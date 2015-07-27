@@ -1,4 +1,15 @@
 {
-  "name":"pos_v2",
-  "main":"./main/main.js"
+  "name": "pos_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aositelici/node-pos.git"
+  },
+  "author": "liya",
+  "license": "ISC"
 }
