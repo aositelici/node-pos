@@ -1,5 +1,5 @@
-var Item = require('../main/model/item');
-var Promotion = require('../main/model/promotion');
+var Item = require('../lib/model/item');
+var Promotion = require('../lib/model/promotion');
 exports.loadAllItems = function() {
   return [
     new Item('ITEM000000', '可口可乐', '瓶', 3.00),

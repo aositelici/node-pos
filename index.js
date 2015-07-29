@@ -1,4 +1,4 @@
- var print = require('./main/main');
+ var print = require('./lib/main');
  print.printReceipt([
       'ITEM000001',
       'ITEM000001',
