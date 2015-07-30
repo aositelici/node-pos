@@ -1,25 +1,27 @@
-exports.printReceipt = function(tags) {
-
 var Scanner = require('./model/scanner');
 var Cart = require('./model/cart');
 var Pos = require('./model/pos');
 var PromotionCalculator = require('./model/promotion-calculator');
-var fixtures = require('../test/fixtures');
+var fixtures = require('../spec/fixtures');
 var CartItem = require('./model/cart-item');
 
-var scanner = new Scanner();
-var cart = new Cart();
+printReceipt = function(tags) {
 
-var pos = new Pos(cart,scanner);
-tags.forEach(function(tag) {
-  pos.scan(tag);
-});
+  var scanner = new Scanner();
+  var cart = new Cart();
 
-var cartItems = cart.getCartItems();
-var promotions = fixtures.loadPromotions();
+  var pos = new Pos(cart,scanner);
+  tags.forEach(function(tag) {
+    pos.scan(tag);
+  });
 
-var receipt = pos.printReceipt (cartItems,promotions);
+  var cartItems = cart.getCartItems();
+  var promotions = fixtures.loadPromotions();
 
-console.log(receipt);
+  var receipt = pos.printReceipt (cartItems,promotions);
+
+  console.log(receipt);
 }
+
+exports.printReceipt = printReceipt;
 

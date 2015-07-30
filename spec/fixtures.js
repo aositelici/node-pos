@@ -1,6 +1,7 @@
-var Item = require('../lib/model/item');
-var Promotion = require('../lib/model/promotion');
-exports.loadAllItems = function() {
+var Item = require('../src/model/item');
+var Promotion = require('../src/model/promotion');
+
+loadAllItems = function() {
   return [
     new Item('ITEM000000', '可口可乐', '瓶', 3.00),
     new Item('ITEM000001', '雪碧', '瓶', 3.00),
@@ -11,7 +12,7 @@ exports.loadAllItems = function() {
   ];
 }
 
-exports.loadPromotions = function() {
+loadPromotions = function() {
   return [
     new Promotion('BUY_TWO_GET_ONE_FREE', [
       'ITEM000000',
@@ -20,3 +21,6 @@ exports.loadPromotions = function() {
     ])
   ];
 }
+
+exports.loadAllItems = loadAllItems;
+exports.loadPromotions = loadPromotions ;

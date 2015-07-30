@@ -2,26 +2,9 @@
   "name": "pos_v2",
   "version": "1.0.0",
   "description": "rewrite pos_v2 in nodejs",
-  "main": "index.js",
-  "keywords":"node-pos",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {
-    "jasmine": "^2.3.1"
-  },
-  "devDependencies": {},
+  "devDependencies": {"jasmine": "^2.3.1"},
   "scripts": {
-    "start": "node index.js",
-    "test": "jasmine test/test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aositelici/node-pos.git"
-  },
-  "author": "liya",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aositelici/node-pos/issues"
+    "start": "node app.js",
+    "test": "jasmine spec/main-spec.js"
   }
 }
