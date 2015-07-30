@@ -1,5 +1,6 @@
 var Receipt = require('./receipt');
 var ReceiptItem = require('./receipt-item');
+
 function Pos(cart,scanner) {
 
   this.scanner = scanner;
@@ -70,5 +71,6 @@ Pos.prototype.getSavedAmount = function() {
     return a+b;
   });
 }
+
 module.exports = Pos;
 
