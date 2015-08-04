@@ -1,9 +1,9 @@
 var PromotionCalculator = require('./promotion-calculator');
 
-function ReceiptItem(promotions,cartItem) {
+function ReceiptItem(cartItem) {
 
   this.cartItem = cartItem;
-  this.discount = this.cartItem.item.price*PromotionCalculator.calculateSalesCount (promotions, cartItem) ;
+  this.discount = this.cartItem.item.price*PromotionCalculator.calculateSalesCount(cartItem) ;
 }
 
 ReceiptItem.prototype.getActualSubTotal = function() {

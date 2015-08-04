@@ -1,3 +1,5 @@
+var fixtures = require('../../spec/fixtures');
+
 function Item(barcode, name, unit, price) {
   
   this.barcode = barcode;
@@ -6,13 +8,12 @@ function Item(barcode, name, unit, price) {
   this.price = price || 0.00;
 
 }
-Item.getItems = function (barcode) {
+Item.getItem = function(barcode) {
 
   var value;
-  var fixtures = require('../../spec/fixtures');
   var allItems = fixtures.loadAllItems();
 
-  allItems.forEach(function (oneItem) {
+  allItems.forEach(function(oneItem) {
     if (oneItem.barcode === barcode) {
       value = oneItem;
       return;

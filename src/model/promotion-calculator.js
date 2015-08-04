@@ -1,13 +1,17 @@
 var CartItem = require('./cart-item');
+var fixtures = require('../../spec/fixtures');
 
 function PromotionCalculator() {
 }
 
-PromotionCalculator.getBuyTwoGetOneFree = function(promotions) {
+PromotionCalculator.getBuyTwoGetOneFree = function() {
  
+  var promotions = fixtures.loadPromotions();
+
   var promotion = promotions.filter(function(promotion) {
     return promotion.type === 'BUY_TWO_GET_ONE_FREE';
   });
+ 
   return promotion[0].barcodes;
 };
 
@@ -15,9 +19,9 @@ PromotionCalculator.sale = function (count) {
   return Math.floor(count / 3);
 };
 
-PromotionCalculator.calculateSalesCount = function (promotions, cartItem) {
+PromotionCalculator.calculateSalesCount = function (cartItem) {
 
-  var barcodes = this.getBuyTwoGetOneFree(promotions);
+  var barcodes = this.getBuyTwoGetOneFree();
   var salesCount = 0;
 
   for (var i = 0; i < barcodes.length; i++) {

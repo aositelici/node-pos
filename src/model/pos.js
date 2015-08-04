@@ -15,40 +15,45 @@ function Pos(cart,scanner) {
 Pos.prototype.scan = function(tag) {
  
   var cartItem = this.scanner.scan(tag);
+  console.log(cartItem);
   if(cartItem) {
     this.cart.addCartItem(cartItem);
   }
 };
 
-Pos.prototype.printReceipt = function(cartItems,promotions){
+Pos.prototype.printReceipt = function(){
 
-  this.getSubtotals(promotions,cartItems);
-  this.getDiscounts(promotions,cartItems);
+  this.getSubtotals();
+  this.getDiscounts();
   this.getTotalAmount();
   this.getSavedAmount();
+
+  var cartItems = this.cart.cartItems;
 
   this.receipt = new Receipt(cartItems,this.subTotals,this.totalAmount,this.savedAmount);
   return this.receipt.printReceipt();
 
 };
 
-Pos.prototype.getSubtotals = function(promotions,cartItems) {
+Pos.prototype.getSubtotals = function() {
 
   var _this = this;
+  var cartItems = this.cart.cartItems;
 
   cartItems.forEach(function(cartItem) {
-    var receiptItem = new ReceiptItem(promotions,cartItem);
+    var receiptItem = new ReceiptItem(cartItem);
     _this.subTotals.push(receiptItem.getActualSubTotal());
   });
 
 }
 
-Pos.prototype.getDiscounts = function(promotions,cartItems) {
+Pos.prototype.getDiscounts = function() {
 
   var _this = this;
+  var cartItems = this.cart.cartItems;
 
   cartItems.forEach(function(cartItem) {
-    var receiptItem = new ReceiptItem(promotions,cartItem);
+    var receiptItem = new ReceiptItem(cartItem);
     _this.discounts.push(receiptItem.discount);
   });
 

@@ -5,6 +5,6 @@
   "devDependencies": {"jasmine": "^2.3.1"},
   "scripts": {
     "start": "node app.js",
-    "test": "jasmine spec/main-spec.js"
+    "test": "jasmine "
   }
 }
