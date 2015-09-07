@@ -1,47 +1,52 @@
 'use strict';
 
 var Cart = require('../src/model/cart');
-describe('cart',function() {
+describe('cart', function () {
   var cart;
   var inputCartItem;
 
-  beforeEach( function() {
-  	
+  beforeEach(function () {
+
     cart = new Cart();
-    inputCartItem = {item: {barcode:'ITEM000000', name:'可口可乐', nuit:'瓶', price:3.00},count:2};
-    
+    inputCartItem = {item: {barcode: 'ITEM000000', name: '可口可乐', nuit: '瓶', price: 3.00}, count: 2};
+
   });
 
-  describe('#findCartItem',function() {
+  describe('#findCartItem', function () {
 
-  	it('when cart.cartItems is null', function () {
+    it('when cart.cartItems is null', function () {
 
       expect(cart.findCartItem(inputCartItem)).toEqual(undefined);
-  	});
-  	it('when cart.cartItems is not null', function () {
-       cart.cartItems = [{item: {barcode:'ITEM000000', name:'可口可乐', nuit:'瓶', price:3.00},count:1}];
+    });
+    it('when cart.cartItems is not null', function () {
+      cart.cartItems = [{item: {barcode: 'ITEM000000', name: '可口可乐', nuit: '瓶', price: 3.00}, count: 1}];
 
-       expect(cart.findCartItem(inputCartItem)).toEqual({item: {barcode:'ITEM000000', name:'可口可乐', nuit:'瓶', price:3.00},count:1});
-  	});
+      expect(cart.findCartItem(inputCartItem)).toEqual({
+        item: {
+          barcode: 'ITEM000000',
+          name: '可口可乐',
+          nuit: '瓶',
+          price: 3.00
+        }, count: 1
+      });
+    });
   });
 
-  describe('#addCartItem',function() {
+  describe('#addCartItem', function () {
 
     it('when cart.cartItems is null', function () {
 
       cart.addCartItem(inputCartItem);
 
-      expect(cart.cartItems).toEqual([{item: {barcode:'ITEM000000', name:'可口可乐', nuit:'瓶', price:3.00},count:2}]);
-  	});
+      expect(cart.cartItems).toEqual([{item: {barcode: 'ITEM000000', name: '可口可乐', nuit: '瓶', price: 3.00}, count: 2}]);
+    });
 
-  	it('when cart.cartItems is not null', function () {
+    it('when cart.cartItems is not null', function () {
 
-       cart.cartItems = [{item: {barcode:'ITEM000000', name:'可口可乐', nuit:'瓶', price:3.00},count:1}];
-       cart.addCartItem(inputCartItem);
+      cart.cartItems = [{item: {barcode: 'ITEM000000', name: '可口可乐', nuit: '瓶', price: 3.00}, count: 1}];
+      cart.addCartItem(inputCartItem);
 
-       expect(cart.cartItems).toEqual([{item: {barcode:'ITEM000000', name:'可口可乐', nuit:'瓶', price:3.00},count:3}]);
-  	});
+      expect(cart.cartItems).toEqual([{item: {barcode: 'ITEM000000', name: '可口可乐', nuit: '瓶', price: 3.00}, count: 3}]);
+    });
   });
-
-
-})
+});

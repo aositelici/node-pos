@@ -1,17 +1,16 @@
-var CartItem = require('./cart-item');
 var fixtures = require('../../spec/fixtures');
 
 function PromotionCalculator() {
 }
 
-PromotionCalculator.getBuyTwoGetOneFree = function() {
- 
+PromotionCalculator.getBuyTwoGetOneFree = function () {
+
   var promotions = fixtures.loadPromotions();
 
-  var promotion = promotions.filter(function(promotion) {
+  var promotion = promotions.filter(function (promotion) {
     return promotion.type === 'BUY_TWO_GET_ONE_FREE';
   });
- 
+
   return promotion[0].barcodes;
 };
 

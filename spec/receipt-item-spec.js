@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var Receipt = require('../src/model/receipt');
 
@@ -16,4 +16,4 @@ describe('receipt', function() {
       expect(receipt.getItemsString(cartItems)).toBe(expectText);
     })
   });
-})
+});

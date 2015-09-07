@@ -1,5 +1,5 @@
 function DataShow(currentDate) {
-	
+
   this.year = this.dateDigitToString(currentDate.getFullYear());
   this.month = this.dateDigitToString(currentDate.getMonth() + 1);
   this.date = this.dateDigitToString(currentDate.getDate());
