@@ -1,7 +1,7 @@
-var Item = require('../src/model/item');
 var Promotion = require('../src/model/promotion');
 
 exports.loadAllItems = function() {
+  var Item = require('../src/model/item');
   return [
     new Item('ITEM000000', '可口可乐', '瓶', 3.00),
     new Item('ITEM000001', '雪碧', '瓶', 3.00),
